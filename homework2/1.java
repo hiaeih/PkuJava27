@@ -29,5 +29,6 @@ public class Solution {
 				break;
 			}
 		}
+		return numbers;
 	}
 }

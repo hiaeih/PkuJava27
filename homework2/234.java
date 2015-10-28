@@ -26,7 +26,7 @@ public class TwoHundredandThirtyfour {
             if(s.charAt(i) != s.charAt(len - i -1))
                 break;
         return i == len/2?true:false;*/
-        /*if(head == null || head.next == null) { return true;}
+        if(head == null || head.next == null) { return true;}
         ListNode slow = head, fast = head;
          //find middle node
          while(fast.next != null && fast.next.next != null) {
@@ -46,8 +46,9 @@ public class TwoHundredandThirtyfour {
              if(pre.val != slow.val) return false;
              pre = pre.next;
          }
-         return true;*/
-        int len = 0;
+         return true;
+		 
+        /*int len = 0;
         if(head == null || head.next == null)
             return true;
         ListNode ln = head;
@@ -70,6 +71,6 @@ public class TwoHundredandThirtyfour {
             head = head.next;
             ln = ln.next;
         }
-        return num == len/2?true:false;
+        return num == len/2?true:false;*/
     }
 }
