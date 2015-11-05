@@ -1,4 +1,4 @@
-﻿public class Solution {
+public class Solution {
     public int majorityElement(int[] nums) {
        int element=0;
        int count=0;
@@ -10,6 +10,9 @@
            else{
                if(element==nums[i])count++;
                else count--;
+               if(count>nums.length/2){
+                   return element;
+               }
            }
        }
        return element;
