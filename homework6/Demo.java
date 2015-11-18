@@ -4,6 +4,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedList;
@@ -105,10 +106,13 @@ public class Demo {
 			//wd∈A 且wd ∉B的单词总数占A文件的百分比
 			ArrayList list5 = new ArrayList();
 			list5=(ArrayList) list1.clone();
-			for (int j = 0; j < list2.size(); j++) {
-					Object t2 = list2.get(j);
-					if (list5.contains(t2)) {
-						list5.remove(t2);
+			for (int j = 0; j < list3.size(); j++) {
+					Object t2 = list3.get(j);
+					for(int k=0;k<list5.size();k++){
+						Object t3 = list5.get(k);
+					if (t3.equals(t2)) {
+						list5.remove(t3);
+					}
 					}
 				}
 			System.out.println("wd∈A 且wd ∉B的单词总数占A文件的百分比是：  " + 1.0*list5.size()/list1.size()*100+"%");
@@ -133,6 +137,7 @@ public class Demo {
              System.out.println("\n");
              for (Iterator<WordEntity> it = set.iterator(); it.hasNext(); ) {
                  WordEntity w = it.next();
+                 System.out.println("单词:" + w.getKey() + " 出现的个数为： " + w.getCount());
                  System.out.println("单词:" + w.getKey() + " 出现的百分比为： " + 1.0*w.getCount()/list1.size()*100+"%");
              }
              System.out.println("\n");
@@ -140,10 +145,13 @@ public class Demo {
 			//wd∈B且 wd∉A的单词总数占B文件的百分比
 			ArrayList list6 = new ArrayList();
 			list6=(ArrayList) list2.clone();
-			for (int j = 0; j < list1.size(); j++) {
-					Object t1 = list1.get(j);
-					if (list6.contains(t1)) {
-						list6.remove(t1);
+			for (int j = 0; j < list3.size(); j++) {
+					Object t5 = list3.get(j);
+					for(int k=0;k<list6.size();k++){
+						Object t4 = list6.get(k);
+					if (t4.equals(t5)) {
+						list6.remove(t4);
+					}
 					}
 				}
 			System.out.println("wd∈B 且wd ∉A的单词总数占B文件的百分比是：  " + 1.0*list6.size()/list2.size()*100+"%");
@@ -167,6 +175,7 @@ public class Demo {
             System.out.println("\n");
             for (Iterator<WordEntity> it1 = set1.iterator(); it1.hasNext(); ) {
                 WordEntity w1 = it1.next();
+                System.out.println("单词:" + w1.getKey() + " 出现的个数为： " + w1.getCount());
                 System.out.println("单词:" + w1.getKey() + " 出现的百分比为： " + 1.0*w1.getCount()/list2.size()*100+"%");
             }
             System.out.println("\n");
