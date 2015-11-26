@@ -1,2 +1,0 @@
-apple orange   banana
-orange   pear pear mango
